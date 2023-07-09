@@ -9,8 +9,9 @@ data class LottoNumbers(val values: List<LottoNumber>) {
 
     constructor(vararg numbers: Int) : this(numbers.map { LottoNumber(it) }.toList())
 
-    fun countMatchingNumbers(winningNumbers: LottoNumbers) =
-        values.count { winningNumbers.containNumber(it) }
+    fun countMatchingNumbers(winningNumbers: LottoNumbers): Int {
+        return values.count { winningNumbers.containNumber(it) }
+    }
 
     fun containNumber(number: LottoNumber): Boolean {
         return values.contains(number)

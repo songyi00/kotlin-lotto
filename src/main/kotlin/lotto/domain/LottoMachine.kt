@@ -9,8 +9,8 @@ class LottoMachine(
 
         val numberOfAutoTickets = getTotalNumberOfTickets(purchaseAmount) - manualLottoNumbers.size
 
-        return List(numberOfAutoTickets) { lottoNumberGenerator.generate() }
-            .run { manualLottoNumbers + this }
+        return manualLottoNumbers
+            .plus(List(numberOfAutoTickets) { lottoNumberGenerator.generate() })
             .let { LottoTickets(it) }
     }
 

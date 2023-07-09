@@ -25,8 +25,8 @@ class WinningTicketTest : FunSpec({
         val winningNumbers = LottoNumbers(1, 2, 3, 4, 5, 6)
         val myNumbers = LottoNumbers(1, 2, 3, 4, 5, 10)
         val lottoTickets = LottoTickets(listOf(myNumbers))
-        val hasBonusLottoNumber = LottoNumber(10)
-        val winningTicket = WinningTicket(winningNumbers, hasBonusLottoNumber)
+        val bonusNumber = LottoNumber(10)
+        val winningTicket = WinningTicket(winningNumbers, bonusNumber)
         val expected = LottoResult(mapOf(LottoRank.SECOND to 1))
 
         // when
